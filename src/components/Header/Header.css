@@ -1,0 +1,33 @@
+.header{
+  background-color: #2e3136;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-item-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 110%; /* Exibe logo abaixo do botão */
+  left: 5%;
+  background-color: #2e3136;
+  border-radius: 10px;
+  padding: 5px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #2e3136;
+  border: none;
+  text-align: left;
+}
+
+.btn-opc{
+  margin-top: 3px;
+}

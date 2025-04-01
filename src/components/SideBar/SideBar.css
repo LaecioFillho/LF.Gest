@@ -1,0 +1,51 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar{
+  max-width: 110px;
+  height: 92vh;
+  background-color: #2e3136;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.open {
+  display: block;
+  max-width: 250px;
+  height: 92vh;
+  background-color: #2e3136;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.sidebarButton{
+  width: 200px;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  transition: 0.3s;
+}
+
+.sidebarButtonWidth{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  width: 65px;
+  height: 55px;
+  transition: 0.3s;
+}
+
+.textNone{
+  display: none;
+  transition: 0.3s;
+}
