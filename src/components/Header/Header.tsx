@@ -15,14 +15,30 @@ export default function Header() {
   ]
 
   const opcId = [
-    { id: 1, opc: ['Teste1', 'Teste2'] },
-    { id: 2, opc: ['Teste3', 'Teste4'] },
-    { id: 3, opc: ['Teste5', 'Teste6'] },
-    { id: 4, opc: ['Teste7', 'Teste8'] },
-    { id: 5, opc: ['Teste9', 'Teste10'] },
-    { id: 6, opc: ['Teste11', 'Teste12'] },
-    { id: 7, opc: ['Teste13', 'Teste14'] },
-    { id: 8, opc: ['Teste15', 'Teste16'] }
+    { id: 1,
+      opc: ['Conf. Sistema', 'Conf. Mensagens', 'Sair']
+    },
+    { id: 2,
+      opc: ['Clientes', 'Produtos', 'Funcionarios', 'Fornecedores', 'Cont. Bancarias', 'Maq. Cartão']
+    },
+    { id: 3,
+      opc: ['Entrada de Estoque', ' Importar XML NFe']
+    },
+    { id: 4,
+      opc: ['Fechamento de Caixa', 'Recebimentos Compensações', 'Registrar Sangrias', 'Cadastrar despesas' ]
+    },
+    { id: 5,
+      opc: ['Vendas', 'Reimprimir/Excluir Venda', 'Lista de Condicionais', 'Lista de Orçamentos']
+    },
+    { id: 6,
+      opc: ['Etiquetas de Cód. de Barras', 'Imp. Cadastros de Clientes p/ Excel', 'Imp. cadastros de Produtos Excel', 'Imp. Cadastros de Fornecedores p/ Excel']
+    },
+    { id: 7,
+      opc: ['Relatórios cadastrais', 'Relatórios Financeiros', 'Relatórios Gerenciais']
+    },
+    { id: 8,
+      opc: ['Contactar Suporte', 'FAQ', 'Sobre o Sistema']
+    }
   ]
 
   const [isOpen, setIsOpen] = useState(false);
@@ -39,10 +55,13 @@ export default function Header() {
         {data.map((item) => (
           <div key={item.id} className="header-item-container">
             <button
-              className="header-item"
+              className="header-item-btn"
               onClick={() => toggleMenu(item.id)}
-              onMouseEnter={() => toggleMenu(item.id)}>
-              {item.name}
+              onMouseEnter={() => {
+                setIsOpen(true)
+                setIdd(item.id)
+              }}>
+                {item.name}
             </button>
 
             {/* Renderiza a lista de opções abaixo do botão correspondente */}

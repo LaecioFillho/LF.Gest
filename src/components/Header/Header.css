@@ -9,25 +9,27 @@
   display: inline-block;
 }
 
+.header-item-btn{
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dropdown {
   position: absolute;
   top: 110%; /* Exibe logo abaixo do botão */
-  left: 5%;
+  left: -13%;
   background-color: #2e3136;
   border-radius: 10px;
-  padding: 5px;
+  padding: 3px;
   z-index: 1000;
-}
-
-.dropdown-item {
-  display: block;
-  padding: 5px 10px;
-  cursor: pointer;
-  background-color: #2e3136;
-  border: none;
-  text-align: left;
+  width: 150px;
+  border: 1px solid #ccc;
 }
 
 .btn-opc{
+  width: 95%;
   margin-top: 3px;
+  font-size: 12px;
 }
