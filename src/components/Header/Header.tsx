@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Header.css'
+import Modal from '../Modal/Modal';
 
 export default function Header() {
 
@@ -42,11 +43,24 @@ export default function Header() {
   ]
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
   const [idd, setIdd] = useState(0);
+  const [name, setName] = useState("");
+
 
   function toggleMenu(id: number){
     setIsOpen(!isOpen);
     setIdd(id);
+  };
+
+  function handleModal(opc: string) {
+    setIsOpenModal(true);
+    setName(opc);
+  }
+
+  function closeModal() {
+    setIsOpenModal(false);
   };
 
   return (
@@ -68,7 +82,14 @@ export default function Header() {
             {isOpen && idd === item.id && (
               <div className="dropdown">
                 {opcId.find(opcItem => opcItem.id === item.id)?.opc.map((opc, index) => (
-                  <button key={index} className="btn-opc">
+                  <button
+                    key={index}
+                    className="btn-opc"
+                    onClick={() => {
+                      handleModal(opc);
+                      setIsOpen(false);
+                      setIdd(0);
+                    }}>
                     {opc}
                   </button>
                 ))}
@@ -77,6 +98,11 @@ export default function Header() {
           </div>
         ))}
       </div>
+
+      <Modal
+        title={name}
+        openModal={isOpenModal}
+        onClose={closeModal}/>
     </>
   );
 }
