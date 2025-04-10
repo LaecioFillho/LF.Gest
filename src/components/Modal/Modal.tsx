@@ -1,10 +1,10 @@
-import Input from '../Inputs/Input';
 import './Modal.css';
 
 interface ModalProps {
   title: string;
   openModal: boolean;
   onClose: () => void;
+  children?: React.ReactNode; 
 }
 
 export default function Modal({ title, openModal, onClose}: ModalProps) {
@@ -17,7 +17,6 @@ export default function Modal({ title, openModal, onClose}: ModalProps) {
       <div className="modal">
         <div className="modal-content">
           <h2 className="title-h1">{title}</h2>
-          <Input />
 
           <div className='btn-container'>
             <button

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './Header.css'
-import Modal from '../Modal/Modal';
 
 export default function Header() {
 
@@ -45,8 +44,9 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
+
   const [idd, setIdd] = useState(0);
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
 
 
   function toggleMenu(id: number){
@@ -55,8 +55,10 @@ export default function Header() {
   };
 
   function handleModal(opc: string) {
-    setIsOpenModal(true);
-    setName(opc);
+    if (opc === 'Clientes') {
+      setIsOpenModal(true);
+      setTitle(opc);
+    }
   }
 
   function closeModal() {
@@ -99,10 +101,24 @@ export default function Header() {
         ))}
       </div>
 
-      <Modal
-        title={name}
-        openModal={isOpenModal}
-        onClose={closeModal}/>
+      <div
+        className="modal-addUsers"
+        style={{ display: isOpenModal ? 'block' : 'none' }}
+      >
+        <h1 className='title-h1'>{title}</h1>
+
+        <div className='btn-container'>
+          <button
+            onClick={closeModal}>
+            <span className="btn-text">Fechar</span>
+          </button>
+
+          <button>
+            <span className="btn-text">Salvar</span>
+          </button>
+        </div>
+
+      </div>
     </>
   );
 }

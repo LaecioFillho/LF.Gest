@@ -2,7 +2,7 @@ import './Input.css'
 
 export default function Input() {
 
-  const label = "Input Label";
+  const label = "Testando para ver se funciona";
 
   return (
     <div className="input-container">
